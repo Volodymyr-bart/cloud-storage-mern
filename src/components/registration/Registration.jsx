@@ -1,15 +1,17 @@
-import { registration } from "../../action/user";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/operations";
 import StyledForm from "./Registration.styled";
 
 const Registration = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      registration(values);
+      dispatch(register(values));
     },
   });
   return (

@@ -1,17 +1,21 @@
-import { login } from "../../action/user";
 import { useFormik } from "formik";
 import StyledForm from "./Login.styled";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../redux/auth/operations";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      login(values);
+      dispatch(logIn(values));
     },
   });
+
   return (
     <StyledForm onSubmit={formik.handleSubmit}>
       <h2>Login</h2>
