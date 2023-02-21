@@ -16,6 +16,9 @@ const Navbar = () => {
           <div className="navbar__registration">
             <NavLink to="/register">Registration</NavLink>
           </div>
+          <div className="navbar__registration">
+            <NavLink to="/user">User</NavLink>
+          </div>
         </div>
       </div>
     </NavbarStyled>
